@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('partials/header') %>
+</head>
+<body>
+  <%-include ('partials/navigation')%>
+
+  <div class="container p-4">
+    <div class="row">
+
+    <%if (persons.length > 0) {%>
+    <% persons.forEach(function(person) { %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <%= person.nombre %>
+        </div>
+        <!-- <img class="card-img-top" src="<%= person.sexo %>"> -->
+        <div class="card card-body">
+          <%= person.description %>
+        </div>
+        <div class="card-footer">
+          <a href="/delete/<%= person.id %>" class="btn btn-danger btn-block">
+            Delete
+          </a>
+        </div>
+      </div>
+    </div>
+    <%})%>
+    <%} else {%>
+    <div class="card card-body text-center">
+      <p>No User yet. <a href="/new-entry">Add A New One</a></p>
+    </div>
+    <%}%>
+    </div>
+  </div>
+
+</body>
+</html>
