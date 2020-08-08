@@ -17,7 +17,7 @@ router.get('/new-entry', (req, res) => {
 
 router.post('/new-entry', (req, res) => {
 
-  const { nombre, edad , sexo, altura } = req.body;
+  const { nombre, edad , sexo, altura , peso } = req.body;
 
   if (!nombre || !edad || !sexo || !altura) {
     res.status(400).send("Entries must have a title and body");
@@ -29,7 +29,8 @@ router.post('/new-entry', (req, res) => {
     nombre,
     edad,
     sexo,
-    altura
+    altura,
+    peso
   };
 
   // add a new book to the array
