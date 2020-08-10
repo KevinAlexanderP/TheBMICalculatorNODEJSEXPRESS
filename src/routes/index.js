@@ -123,16 +123,16 @@ console.log(json_persons)
   res.redirect('/');
 });
 
-// router.get('/delete/:id', (req, res) => {
-//   console.log({persons})
-//   persons = persons.filter(person => person.id != req.params.id);
+router.get('/delete/:id', (req, res) => {
+  console.log({persons})
+  persons = persons.filter(person => person.id != req.params.id);
 
-//   // saving data
-//   const json_persons = JSON.stringify(persons);
-//   fs.writeFileSync('src/persons.json', json_persons);
+  // saving data
+  const json_persons = JSON.stringify(persons);
+  fs.writeFileSync('src/persons.json', json_persons);
 
-//   res.redirect('/')
-// });
+  res.redirect('/')
+});
 
 
 
