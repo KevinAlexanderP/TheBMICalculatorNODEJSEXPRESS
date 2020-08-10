@@ -8,7 +8,8 @@ const uuid = require('uuid');
 const router = express.Router();
 
 
-let persons = []
+const json_persons = fs.readFileSync('src/persons.json', 'utf-8');
+let persons = JSON.parse(json_persons);
 // let personswithOverweight= JSON.parse(json_persons);
 
 router.get('/', (req, res) => {
